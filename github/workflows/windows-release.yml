@@ -1,0 +1,26 @@
+name: Build Windows installers
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Install Inno Setup
+        run: choco install innosetup -y --no-progress
+      - name: Build and test
+        shell: powershell
+        env:
+          TELEGRAM_API_ID: ${{ secrets.TELEGRAM_API_ID }}
+          TELEGRAM_API_HASH: ${{ secrets.TELEGRAM_API_HASH }}
+        run: .\build\Build-Windows.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Parsis-AutoTrader-Windows
+          path: |
+            installer/output/ParsisAutoTraderSetup.exe

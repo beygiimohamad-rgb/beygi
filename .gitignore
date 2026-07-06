@@ -1,0 +1,7 @@
+**/bin/
+**/obj/
+artifacts/
+installer/output/
+*.user
+*.suo
+src/Parsis.LicenseManager/admin_private/license_private.pem
