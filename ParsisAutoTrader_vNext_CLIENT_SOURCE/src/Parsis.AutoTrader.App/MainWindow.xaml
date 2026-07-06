@@ -1,0 +1,26 @@
+<Window
+    x:Class="Parsis.AutoTrader.App.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Title="Parsis AutoTrader">
+    <Grid Background="#0A101C">
+        <NavigationView x:Name="Nav" PaneDisplayMode="Left" IsBackButtonVisible="Collapsed" IsSettingsVisible="True" SelectionChanged="Nav_SelectionChanged">
+            <NavigationView.PaneHeader>
+                <StackPanel Margin="8,16">
+                    <TextBlock Text="PARSIS" FontSize="24" FontWeight="Bold" Foreground="#F5C45A"/>
+                    <TextBlock Text="XAUUSD AutoTrader" Foreground="#91A0B8"/>
+                </StackPanel>
+            </NavigationView.PaneHeader>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Content="داشبورد / Dashboard" Tag="dashboard" Icon="Home"/>
+                <NavigationViewItem Content="تلگرام / Telegram" Tag="telegram" Icon="Send"/>
+                <NavigationViewItem Content="متاتریدر ۵ / MetaTrader 5" Tag="mt5" Icon="Switch"/>
+                <NavigationViewItem Content="مدیریت ریسک / Risk" Tag="risk" Icon="Shield"/>
+                <NavigationViewItem Content="لاگ زنده / Logs" Tag="logs" Icon="Document"/>
+            </NavigationView.MenuItems>
+            <Frame x:Name="ContentFrame"/>
+        </NavigationView>
+    </Grid>
+</Window>

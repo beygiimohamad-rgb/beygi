@@ -1,0 +1,1 @@
+using Parsis.AutoTrader.Core.Trading; namespace Parsis.AutoTrader.Tests; public class VolumeAllocatorTests{[Fact]public void SplitsPointOne(){var x=VolumeAllocator.Split(.10m,.01m,.01m);Assert.Equal(.10m,x.tp1+x.tp2+x.tp3);Assert.All(new[]{x.tp1,x.tp2,x.tp3},v=>Assert.True(v>=.01m));}}

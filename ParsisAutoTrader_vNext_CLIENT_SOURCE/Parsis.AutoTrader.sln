@@ -1,0 +1,10 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsis.AutoTrader.Core", "src\Parsis.AutoTrader.Core\Parsis.AutoTrader.Core.csproj", "{4B0D50DA-BFC3-41AC-A67E-97AFB32A1222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsis.AutoTrader.App", "src\Parsis.AutoTrader.App\Parsis.AutoTrader.App.csproj", "{BDB24770-C296-4D04-9C6B-4F1BF4C9A93E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parsis.AutoTrader.Tests", "tests\Parsis.AutoTrader.Tests\Parsis.AutoTrader.Tests.csproj", "{28182C6F-93E0-423D-AC5C-556E8F96EB9F}"
+EndProject
+Global
+EndGlobal

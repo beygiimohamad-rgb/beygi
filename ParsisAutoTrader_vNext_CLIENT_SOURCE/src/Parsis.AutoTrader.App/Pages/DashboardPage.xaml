@@ -1,0 +1,16 @@
+<Page x:Class="Parsis.AutoTrader.App.Pages.DashboardPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ScrollViewer><StackPanel Padding="24" Spacing="16">
+    <Grid ColumnSpacing="14"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+      <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="Telegram" FontSize="18"/><TextBlock x:Name="TelegramStatus" Text="Disconnected" Foreground="#FF5F72" FontSize="24" FontWeight="SemiBold"/></StackPanel></Border>
+      <Border Grid.Column="1" Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="MetaTrader 5" FontSize="18"/><TextBlock x:Name="Mt5Status" Text="Disconnected" Foreground="#FF5F72" FontSize="24" FontWeight="SemiBold"/></StackPanel></Border>
+      <Border Grid.Column="2" Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="License" FontSize="18"/><TextBlock x:Name="LicenseStatus" FontSize="20" FontWeight="SemiBold"/></StackPanel></Border>
+    </Grid>
+    <Border Style="{StaticResource CardStyle}"><Grid ColumnSpacing="16"><Grid.ColumnDefinitions><ColumnDefinition Width="2*"/><ColumnDefinition/></Grid.ColumnDefinitions>
+      <StackPanel><TextBlock Text="کنترل معاملات / Trading control" FontSize="22" FontWeight="Bold"/><TextBlock Text="با یک کلیک متاتریدر باز می‌شود، وارد حساب می‌شود و Bridge را اجرا می‌کند." Foreground="{StaticResource MutedBrush}" Margin="0,8,0,18"/>
+        <StackPanel Orientation="Horizontal" Spacing="12"><Button x:Name="StartButton" Content="شروع معاملات / Start trading" Click="Start_Click" Style="{StaticResource AccentButtonStyle}"/><Button Content="توقف / Stop" Click="Stop_Click"/><Button Content="توقف اضطراری" Click="Emergency_Click"/></StackPanel>
+      </StackPanel>
+      <StackPanel Grid.Column="1"><TextBlock Text="Runtime state"/><TextBlock x:Name="RuntimeState" Text="Stopped" FontSize="32" FontWeight="Bold" Foreground="#FFB84D"/></StackPanel>
+    </Grid></Border>
+    <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="آخرین رویداد / Latest activity" FontSize="20" FontWeight="SemiBold"/><TextBlock x:Name="LatestLog" Text="Ready" Margin="0,12,0,0" TextWrapping="Wrap"/></StackPanel></Border>
+  </StackPanel></ScrollViewer>
+</Page>

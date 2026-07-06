@@ -1,0 +1,4 @@
+MetaTrader 5: https://www.metatrader5.com/en/download
+.NET 10 SDK: https://dotnet.microsoft.com/download/dotnet/10.0
+Inno Setup: https://jrsoftware.org/isdl.php
+Visual Studio: https://visualstudio.microsoft.com/downloads/
