@@ -1,0 +1,13 @@
+<Page x:Class="Parsis.AutoTrader.App.Pages.TelegramPage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <ScrollViewer><StackPanel Padding="28" Spacing="14" MaxWidth="1000" HorizontalAlignment="Center">
+  <TextBlock Text="Telegram" FontSize="30" FontWeight="Bold"/><TextBlock Text="ورود با شماره یا QR و انتخاب چند کانال سیگنال" Foreground="{StaticResource MutedBrush}"/>
+  <Border Style="{StaticResource CardStyle}"><StackPanel Spacing="10">
+   <TextBlock Text="شماره موبایل"/><TextBox x:Name="PhoneBox" PlaceholderText="+98912..."/>
+   <TextBlock Text="کد تایید یا رمز دو مرحله‌ای"/><TextBox x:Name="CodeBox"/>
+   <StackPanel Orientation="Horizontal" Spacing="10"><Button Content="ادامه ورود با شماره" Click="PhoneLogin_Click" Style="{StaticResource AccentButtonStyle}"/><Button Content="ورود با QR" Click="QrLogin_Click"/><Button Content="دریافت کانال‌ها" Click="LoadChannels_Click"/></StackPanel>
+   <TextBlock x:Name="LoginStatus" Text="Disconnected"/>
+   <Image x:Name="QrImage" Width="220" Height="220" Stretch="Uniform"/>
+  </StackPanel></Border>
+  <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="کانال‌ها" FontSize="20"/><ListView x:Name="ChannelList" SelectionMode="Multiple" Height="340" DisplayMemberPath="Title"/><Button Content="ذخیره کانال‌های انتخاب‌شده" Click="SaveChannels_Click"/></StackPanel></Border>
+ </StackPanel></ScrollViewer>
+</Page>

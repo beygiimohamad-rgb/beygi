@@ -1,0 +1,21 @@
+<Page x:Class="Parsis.AutoTrader.App.Pages.Mt5Page" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+ <ScrollViewer><StackPanel Padding="28" Spacing="14" MaxWidth="1000" HorizontalAlignment="Center">
+  <TextBlock Text="اتصال خودکار MetaTrader 5" FontSize="30" FontWeight="Bold"/>
+  <TextBlock Text="شماره حساب، رمز و سرور بروکر را وارد کنید. برنامه ترمینال را باز، Bridge را نصب و حساب را وارد می‌کند." Foreground="{StaticResource MutedBrush}" TextWrapping="Wrap"/>
+  <Border Style="{StaticResource CardStyle}"><StackPanel Spacing="12">
+    <TextBlock Text="ترمینال / Terminal"/><ComboBox x:Name="TerminalCombo" DisplayMemberPath="Name" PlaceholderText="Auto detect"/><Button Content="بروزرسانی ترمینال‌ها" Click="Refresh_Click"/>
+    <Grid ColumnSpacing="12"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+      <StackPanel><TextBlock Text="شماره حساب / Login"/><NumberBox x:Name="LoginBox" SpinButtonPlacementMode="Hidden"/></StackPanel>
+      <StackPanel Grid.Column="1"><TextBlock Text="سرور بروکر / Server"/><TextBox x:Name="ServerBox" PlaceholderText="AMarkets-Demo or server:port"/></StackPanel>
+    </Grid>
+    <TextBlock Text="رمز معاملاتی / Trading password"/><PasswordBox x:Name="PasswordBox"/>
+    <Grid ColumnSpacing="12"><Grid.ColumnDefinitions><ColumnDefinition/><ColumnDefinition/><ColumnDefinition/></Grid.ColumnDefinitions>
+      <StackPanel><TextBlock Text="نماد طلا"/><TextBox x:Name="SymbolBox" PlaceholderText="AUTO"/></StackPanel>
+      <StackPanel Grid.Column="1"><TextBlock Text="Magic Number"/><NumberBox x:Name="MagicBox"/></StackPanel>
+      <StackPanel Grid.Column="2"><TextBlock Text="Slippage"/><NumberBox x:Name="SlippageBox"/></StackPanel>
+    </Grid>
+    <StackPanel Orientation="Horizontal" Spacing="10"><Button Content="ذخیره تنظیمات" Click="Save_Click" Style="{StaticResource AccentButtonStyle}"/><Button Content="اتصال و راه‌اندازی خودکار" Click="Connect_Click"/></StackPanel>
+  </StackPanel></Border>
+  <Border Style="{StaticResource CardStyle}"><StackPanel><TextBlock Text="وضعیت اتصال" FontSize="20"/><TextBlock x:Name="StatusText" Text="Not connected" FontSize="24" FontWeight="SemiBold"/></StackPanel></Border>
+ </StackPanel></ScrollViewer>
+</Page>

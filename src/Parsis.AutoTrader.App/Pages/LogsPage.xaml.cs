@@ -1,0 +1,2 @@
+using Microsoft.UI.Xaml.Controls; using System.Collections.ObjectModel;
+namespace Parsis.AutoTrader.App.Pages; public sealed partial class LogsPage:Page{private readonly ObservableCollection<string> _logs=new();public LogsPage(){InitializeComponent();LogList.ItemsSource=_logs;AppState.Current.LogAdded+=(_,m)=>DispatcherQueue.TryEnqueue(()=>{_logs.Insert(0,m);while(_logs.Count>500)_logs.RemoveAt(_logs.Count-1);});}}
